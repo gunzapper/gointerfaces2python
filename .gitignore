@@ -2,3 +2,4 @@ main*
 !main.c
 sum.*
 !sum.go
+*.so
