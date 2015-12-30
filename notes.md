@@ -1,3 +1,3 @@
 # How to use go in python
 
-You need alway to have a go version activate in gvm to import *.so builded from go in python.
+To import *.so in python, you need to activate (with gvm) the same version of go used to build.
