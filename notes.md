@@ -1,6 +1,7 @@
 # How to use go in python
 
-### Rigth version of go
+
+### Right version of go
 
 
 To import *.so in python, you need to activate (with gvm) the same version of go used to build.
@@ -25,6 +26,10 @@ With
 
     $ go build -buildmode=c-shared -o sum.so sum.go
 
-I produce also `sum.h`, but using the same istruction for `first_example.go`,
+I produce also `sum.h`, but using the same instruction for `first_example.go`,
 I do not have any `*.h`.
 
+
+### On Ramahlo file
+
+I copied from [Rahmalo's Fluent Python github repository](https://raw.githubusercontent.com/fluentpython/example-code) the example for single dispatch. I renamed it from generic.py to single_dispatch.py. 
