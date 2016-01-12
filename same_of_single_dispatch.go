@@ -19,19 +19,21 @@ func main() {
 
     fmt.Println(set)
 
-    ms := MySet(set)
-    h = ms
-    /*ms := MySet(set)
-    h = &ms
+    ms := MySet{s:mapset.NewSet()}
+    ms.s.Add(1)
+    ms.s.Add(2)
+    ms.s.Add(3)
 
-    fmt.Println(h.ToHtml())*/
+    h = &ms
+    fmt.Println(h.ToHtml)
+
 }
 
-type MySet mapset.Set
-/*
-type MySet mapset.Set
-*/
+type MySet struct {
+   s mapset.Set
+}
+
 func (ms *MySet) ToHtml() string {
-  return fmt.Sprintf("<pre>%v</pre>", ms)
+  return fmt.Sprintf("<pre>%v</pre>", ms.s) // why is set an adress?
 }
 
