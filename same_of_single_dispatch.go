@@ -3,6 +3,7 @@ package main
 import (
     "fmt"
     "github.com/deckarep/golang-set" // mapset -> I need to use sets
+    "math"
 )
 
 type Htmlize interface {
@@ -25,8 +26,12 @@ func main() {
     ms.s.Add(3)
 
     h = &ms
-    fmt.Println(h.ToHtml)
+    fmt.Println(h.ToHtml())
 
+    mf := MyFunc(math.Abs)
+
+    h = mf
+    fmt.Println(h.ToHtml())
 }
 
 type MySet struct {
@@ -37,3 +42,8 @@ func (ms *MySet) ToHtml() string {
   return fmt.Sprintf("<pre>%v</pre>", ms.s) // why is set an adress?
 }
 
+type MyFunc func(float64) float64
+
+func (mf MyFunc) ToHtml() string {
+    return fmt.Sprintf("<pre>%v</pre>", mf)
+}
