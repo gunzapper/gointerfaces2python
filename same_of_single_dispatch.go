@@ -4,8 +4,10 @@ import (
     "fmt"
     "github.com/deckarep/golang-set" // mapset -> I need to use sets
     "math"
-    "reflect"
-    "runtime"
+    "reflect" // to find the name of a function
+    "runtime" // used together with this library
+    "html" // to have & in html
+    "strings" // to replace in strings
 )
 
 type Htmlize interface {
@@ -34,22 +36,35 @@ func main() {
 
     h = mf
     fmt.Println(h.ToHtml())
+
+    //ms := MyString("Heimlich & Co.\n- a game")
+    // go is strong typed
+    m_s := MyString("Heimlich & Co.\n- a game")
+    h = m_s
+    fmt.Println(h.ToHtml())
 }
 
 type MySet struct {
    s mapset.Set
 }
 
-func (ms *MySet) ToHtml() string {
-  return fmt.Sprintf("<pre>%v</pre>", ms.s) // why is set an adress?
+func (v *MySet) ToHtml() string {
+  return fmt.Sprintf("<pre>%v</pre>", v.s) // why is set an adress?
 }
 
 type MyFunc func(float64) float64
 
-func (mf MyFunc) ToHtml() string {
+func (v MyFunc) ToHtml() string {
     //return fmt.Sprintf("<pre>%v</pre>", mf)
     // it puts something like <pre>0x473a70</pre>
     // looking on sof question 7052693
-    name := runtime.FuncForPC(reflect.ValueOf(mf).Pointer()).Name()
+    name := runtime.FuncForPC(reflect.ValueOf(v).Pointer()).Name()
     return fmt.Sprintf("<pre>%s</pre>", name)
+}
+
+type MyString string
+
+func (v MyString) ToHtml() string {
+    return fmt.Sprintf("<pre>%s</pre>",
+      strings.Replace(html.EscapeString(string(v)), "\n", "\n<br>", -1))
 }
