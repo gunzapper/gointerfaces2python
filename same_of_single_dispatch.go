@@ -42,6 +42,18 @@ func main() {
     m_s := MyString("Heimlich & Co.\n- a game")
     h = m_s
     fmt.Println(h.ToHtml())
+
+    // there is no way to make a generic heterogenous sequence
+    // I have to use struct
+    m_slice := MySlice()
+    sub_e := make([]MyInt, 3)
+    sub_e[0] = 3
+    sub_e[1] = 2
+    sub_e[2] = 1
+    m_slice.s = []inteface{MyString("alpha"),
+      MyInt(66), sub_e}
+    h = m_slice
+    fmt.Println(h.ToHtml())
 }
 
 type MySet struct {
@@ -67,4 +79,22 @@ type MyString string
 func (v MyString) ToHtml() string {
     return fmt.Sprintf("<pre>%s</pre>",
       strings.Replace(html.EscapeString(string(v)), "\n", "\n<br>", -1))
+}
+
+type MyInt int
+
+func (i MyInt) ToHtml() string {
+    return fmt.Sprintf("<pre>%v<pre>", i)
+}
+
+type MySlice struct {
+  s []interface
+}
+
+func (ms MySlice) ToHtml (string) {
+    out_s := ""
+    for _, e := range ms.s {
+        out_s = out_s + fmt.Sprintf("/n<li>%s</li>", e.ToHtml())
+    }
+    return fmt.Sprintf("<ul>%s/n</ul>", out_s)
 }
