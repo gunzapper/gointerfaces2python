@@ -26,8 +26,15 @@ The `main.c` is only used to test `sum.so`
 
     $ gcc -Wall -o main main.c ./sum.so
 
-
 As described in the tutorial mentioned.
+Now, we can build a *C* python module with go...
+
+Or with `ctypes` we can directly use the functions from a `*.so` file. 
+The `import.rst` tests with `sum.so` exactly this opportunity.
+
+To launch the test
+
+    $ python -m doctest -v import.rst
 
 ### abser.go 
 
