@@ -50,6 +50,9 @@ This file is from the github of [Ramalho's book](https://github.com/fluentpython
 
 I want to mimic in go this file...
 
+### Wrong file
+
+It works, but Is it what I want? Maybe no... but...
 
 ## Further readings
 
