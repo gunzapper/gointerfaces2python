@@ -45,14 +45,15 @@ func main() {
 
     // there is no way to make a generic heterogenous sequence
     // I have to use struct
-    m_slice := MySlice()
     sub_e := make([]MyInt, 3)
     sub_e[0] = 3
     sub_e[1] = 2
     sub_e[2] = 1
-    m_slice.s = []inteface{MyString("alpha"),
-      MyInt(66), sub_e}
-    h = m_slice
+    mos := MyOwnStruct{
+      a:MyString("alpha"),
+      i:MyInt(66),
+      si:MyIntSeq{s:sub_e}}
+    h = mos
     fmt.Println(h.ToHtml())
 }
 
@@ -87,14 +88,31 @@ func (i MyInt) ToHtml() string {
     return fmt.Sprintf("<pre>%v<pre>", i)
 }
 
-type MySlice struct {
-  s []interface
+type MyIntSeq struct {
+  s []MyInt
 }
 
-func (ms MySlice) ToHtml (string) {
+func (si MyIntSeq) ToHtml() string {
+    return fmt.Sprintf("<pre>%v</pre>", si)
+}
+
+type MyOwnStruct struct {
+  a MyString
+  i MyInt
+  si MyIntSeq
+}
+
+func (mos MyOwnStruct) ToHtml() string {
     out_s := ""
-    for _, e := range ms.s {
+    /*
+    v := reflect.ValueOf(mos)
+    for i := 0; i < v.NumField(); i++ {
+        e := v.Field(i).Interface()
         out_s = out_s + fmt.Sprintf("/n<li>%s</li>", e.ToHtml())
     }
-    return fmt.Sprintf("<ul>%s/n</ul>", out_s)
+    */
+    out_s += fmt.Sprintf("\n<li>%s</li>", mos.a.ToHtml())
+    out_s += fmt.Sprintf("\n<li>%v</li>", mos.i.ToHtml())
+    out_s += fmt.Sprintf("\n<li>%v</li>", mos.si.ToHtml())
+    return fmt.Sprintf("<ul>%s\n</ul>", out_s)
 }
