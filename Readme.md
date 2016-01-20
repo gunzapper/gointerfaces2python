@@ -16,15 +16,27 @@ Basically, it uses `buildmode` option to have a static library
 It produces also a `*.h` file, with also the functions defined in the go file.
 You can inspect the contain of a `*.so` file with
 
-    $ nm -D 'sum.so'
+    $ nm -D sum.so
 
 And filter the results
 
-    $ nm -D 'sum.so' | grep "Sum"
+    $ nm -D sum.so | grep "Sum"
 
-### first_example.go 
+The `main.c` is only used to test `sum.so`
 
-It is the [first example](https://tour.golang.org/methods/4) of the tour.
+    $ gcc -Wall -o main main.c ./sum.so
+
+
+As described in the tutorial mentioned.
+
+### abser.go 
+
+It is the [interface example](https://tour.golang.org/methods/4) of the go-tour.
+
+If I build the `abser.so` I don't obtain the `abser.h`, and inspecting `abser.so` there are not `Abs` or `Abser`.
+The `so` contains only functions not relative to an interface!
+
+
   
 
 ## Further readings
