@@ -44,7 +44,12 @@ If I build the `abser.so` I don't obtain the `abser.h`, and inspecting `abser.so
 The `so` contains only functions not relative to an interface!
 
 
-  
+### singledispatch.py
+
+This file is from the github of [Ramalho's book](https://github.com/fluentpython/example-code/blob/a3bf32b9fa8b80f714a899ee832145e1091cc635/07-closure-deco/generic.py).
+
+I want to mimic in go this file...
+
 
 ## Further readings
 
