@@ -70,6 +70,7 @@ less `if\less` blocks.
 Because python is a language **EAFP** - *Easier to ask permission than forgiveness*.
 On the contrary of C's **LBYL** - *Look before you leap*.
 
+i
 ## Further readings
 
   - (Go for python programmers) [https://golang-for-python-programmers.readthedocs.org/en/latest/]
