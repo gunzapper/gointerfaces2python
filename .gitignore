@@ -6,3 +6,4 @@ sum.*
 same_of_single_dispatch
 wrong_example_that_works
 *.exe
+*.html
