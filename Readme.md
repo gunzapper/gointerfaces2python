@@ -65,11 +65,12 @@ The last file describe how duck typing and the new coined **goose typing**work.
 It show that informal protocols in python are exactly how the interfaces in go. Use `singlesdispatch` in some case help to write code with
 less `if\less` blocks.
 
-####N.B.:
-Because python is a language with "it is easier ask forgiveness than permission".
-On the contrary of C's "look around before you leap".
+#### N.B.:
 
+Because python is a language **EAFP** - *Easier to ask permission than forgiveness*.
+On the contrary of C's **LBYL** - *Look before you leap*.
 
+i
 ## Further readings
 
   - (Go for python programmers) [https://golang-for-python-programmers.readthedocs.org/en/latest/]
