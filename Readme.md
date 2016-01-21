@@ -8,6 +8,7 @@ To manage the version I have to install [gvm](http://www.hostingadvice.com/how-t
 
 ###sum.go 
 
+
 It is the first file from a [tutorial](https://blog.filippo.io/building-python-modules-with-go-1-5/) that learn how to build python modules with go.
 Basically, it uses `buildmode` option to have a static library
 
@@ -52,11 +53,22 @@ I want to mimic in go this file...
 
 ### Wrong file
 
-It works, but Is it what I want? Maybe no... but...
+It works, but Is it what I want? Maybe no...but...
 
 ### The right file
 
 But is it what we want?
+
+### Goose typing
+
+The last file describe how duck typing and the new coined **goose typing**work. 
+It show that informal protocols in python are exactly how the interfaces in go. Use `singlesdispatch` in some case help to write code with
+less `if\less` blocks.
+
+####N.B.:
+Because python is a language with "it is easier ask forgiveness than permission".
+On the contrary of C's "look around before you leap".
+
 
 ## Further readings
 
