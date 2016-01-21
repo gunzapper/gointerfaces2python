@@ -51,9 +51,11 @@ This file is from the github of [Ramalho's book](https://github.com/fluentpython
 
 I want to mimic in go this file...
 
+
 ### Wrong file
 
 It works, but Is it what I want? Maybe no...but...
+
 
 ### The right file
 
@@ -70,7 +72,6 @@ less `if\less` blocks.
 Because python is a language **EAFP** - *Easier to ask permission than forgiveness*.
 On the contrary of C's **LBYL** - *Look before you leap*.
 
-i
 ## Further readings
 
   - (Go for python programmers) [https://golang-for-python-programmers.readthedocs.org/en/latest/]
