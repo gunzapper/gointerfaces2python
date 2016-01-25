@@ -37,6 +37,7 @@ To launch the test
 
     $ python -m doctest -v import.rst
 
+
 ### abser.go 
 
 It is the [interface example](https://tour.golang.org/methods/4) of the go-tour.
@@ -69,8 +70,9 @@ less `if\less` blocks.
 
 #### N.B.:
 
-Because python is a language **EAFP** - *Easier to ask permission than forgiveness*.
+Because python is a language **EAFP** - *Easier to ask forgiveness than permission*.
 On the contrary of C's **LBYL** - *Look before you leap*.
+
 
 ## Further readings
 
